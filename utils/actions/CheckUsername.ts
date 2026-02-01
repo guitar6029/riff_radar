@@ -18,5 +18,7 @@ export async function checkUsername(username: string): Promise<boolean> {
     return false;
   }
 
-  return data.length > 0;
+  const isAvailable = data.length === 0;
+
+  return isAvailable;
 }
