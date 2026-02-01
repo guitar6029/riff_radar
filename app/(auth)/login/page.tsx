@@ -6,7 +6,7 @@ export default async function Login({ searchParams }: LoginProps) {
   const error = params?.error ?? null;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <div className="flex flex-col items-center justify-center">
       <form
         action={handleSignin}
         className="flex flex-col gap-2 max-w-4xl card"
