@@ -14,7 +14,7 @@ export async function checkUsername(username: string): Promise<boolean> {
     .limit(1);
 
   if (error) {
-    console.log("ERROR : ", error);
+    console.error("ERROR : ", error);
     return false;
   }
 
