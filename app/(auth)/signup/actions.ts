@@ -1,3 +1,5 @@
+"use server";
+
 import { createClient } from "@/lib/supabase/server";
 import { SignupSchema } from "@/lib/zod/Signup";
 import { redirect } from "next/navigation";
