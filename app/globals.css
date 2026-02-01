@@ -1,2 +1,9 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+/* Utility Classes */
+@layer utilities {
+  .trns {
+    @apply transition ease-in-out duration-300;
+  }
+}
