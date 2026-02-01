@@ -1,4 +1,4 @@
-export type LoginProps = {
+export type AuthIssue = {
   searchParams?: {
     error?: string;
   };

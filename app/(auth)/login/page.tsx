@@ -1,7 +1,7 @@
+import { AuthIssue } from "../types";
 import { handleSignin } from "./actions";
-import { LoginProps } from "./types";
 
-export default async function Login({ searchParams }: LoginProps) {
+export default async function Login({ searchParams }: AuthIssue) {
   const params = await searchParams;
   const error = params?.error ?? null;
 
