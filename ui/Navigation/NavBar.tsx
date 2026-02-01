@@ -16,13 +16,15 @@ export default async function NavBar() {
       </nav>
     );
   }
+  console.log("user : ", user);
 
   let avatar = await getCurrentUserProfileAvatar();
+  let email = user.data.user?.email ?? null;
 
   return (
     <nav className="flex items-center justify-between gap-2 bg-primary p-4">
       <h1 className="font-bold">{APP_NAME}</h1>
-      <Account avatarUrl={avatar} />
+      <Account avatarUrl={avatar} email={email} />
     </nav>
   );
 }
