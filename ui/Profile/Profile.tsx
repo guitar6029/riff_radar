@@ -3,7 +3,7 @@
 import { emailPrefix } from "@/utils/emailPrefix";
 import Logout from "./Logout";
 import { useState } from "react";
-
+import Link from "next/link";
 export type ProfileProps = {
   profile: {
     email: string | null;
@@ -35,6 +35,8 @@ export default function Profile({ profile }: ProfileProps) {
         <div className="absolute top-20 right-1  w-50 rounded-2xl border-2 flex flex-col items-start gap-2 p-4">
           {profile.username && <span>{profile.username}</span>}
           {profile.email && <span>@{emailPrefix(profile.email)}</span>}
+          <div className="w-full h-1 border-b"></div>
+          <Link href={"/account"}>Account</Link>
           <div className="w-full h-1 border-b"></div>
           <Logout />
         </div>

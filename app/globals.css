@@ -7,3 +7,9 @@
     @apply transition ease-in-out duration-300;
   }
 }
+
+@layer components {
+  .section-title {
+    @apply text-4xl font-bold;
+  }
+}
