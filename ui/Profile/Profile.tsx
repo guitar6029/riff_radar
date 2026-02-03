@@ -21,6 +21,7 @@ export default function Profile({ profile }: ProfileProps) {
 
   return (
     <div className="flex items-center gap-2 relative">
+      {profile.username && <span>{profile.username}</span>}
       <div onClick={toggleDropdown} className="rounded-4xl w-16 h-16 border-2">
         {profile.avatarUrl && (
           <img
