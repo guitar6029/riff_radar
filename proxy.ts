@@ -1,8 +1,25 @@
-import { type NextRequest } from "next/server";
-import { updateSession } from "@/lib/supabase/proxy";
+import type { NextRequest } from "next/server";
+import {
+  initSupabaseMiddlewareContext,
+  isUserSignedin,
+} from "./lib/supabase/helpers/middlewareClient";
+import { redirectTo } from "./lib/supabase/helpers/redirectTo";
+import { decideRoute } from "./lib/supabase/helpers/routeDecision";
 
 export async function proxy(request: NextRequest) {
-  return await updateSession(request);
+  const url = request.nextUrl.clone();
+  url.pathname = "/";
+
+  const { supabase, response } = initSupabaseMiddlewareContext(request);
+  const isSignedIn = await isUserSignedin(supabase);
+  const pathname = request.nextUrl.pathname;
+  const decision = decideRoute(pathname, isSignedIn);
+
+  if (decision.action === "redirect") {
+    return redirectTo(request, decision.to);
+  }
+
+  return response;
 }
 
 export const config = {
