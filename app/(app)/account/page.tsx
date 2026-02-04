@@ -1,5 +1,6 @@
 import { getProfileById } from "@/lib/auth/getProfileById";
 import { createClient } from "@/lib/supabase/server";
+import CloseAccount from "@/ui/Profile/CloseAccount";
 import { redirect } from "next/navigation";
 
 export default async function Account() {
@@ -41,6 +42,7 @@ export default async function Account() {
         )}
         {!avatarUrl && <span className="w-44">Avatar Not Available</span>}
       </div>
+      <CloseAccount />
     </div>
   );
 }
