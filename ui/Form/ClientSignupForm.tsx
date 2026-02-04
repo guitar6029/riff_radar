@@ -163,7 +163,7 @@ export default function ClientSignupForm({
 
       <button
         type="submit"
-        className="btn"
+        className="btn capitalize"
         disabled={!usernameConfirmed || isCheckingUsernameAvailability}
       >
         signup
